@@ -165,7 +165,7 @@ const PROJECTS = {
     type: 'TOOL',
     title: 'YouTube Downloader',
     desc: 'YouTube 동영상을 간편하게 다운로드할 수 있는 도구입니다. 여기에 동영상 링크를 붙여넣고 다운로드하면 됩니다.',
-    siteUrl: '#',
+    siteUrl: 'https://github.com/juhyukkang2013-art/youtube_downloader-',
     githubUrl: 'https://github.com/juhyukkang2013-art/youtube_downloader',
     mainImage: './img/youtube-downloader.png',
     tags: ['Python', 'youtube-dl'],
