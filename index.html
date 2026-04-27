@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="ko" class="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>juhyuk-kang — 포트폴리오</title>
+    <meta name="description" content="백앤드 개발자 juhyuk-kang의 포트폴리오" />
+    <meta name="color-scheme" content="light dark" />
+
+    <script id="theme-init">
+      (function () {
+        try {
+          var stored = localStorage.getItem("theme");
+          var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          var theme = stored || (prefersDark ? "dark" : "light");
+          document.documentElement.classList.remove("light", "dark");
+          document.documentElement.classList.add(theme);
+        } catch (e) {}
+      })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="progress" aria-hidden="true">
+      <div class="progress__bar" data-progress></div>
+    </div>
+
+    <header class="topbar">
+      <div class="container topbar__inner">
+        <a class="brand" href="#hero" aria-label="홈">juhyuk-kang</a>
+
+        <nav class="topnav" aria-label="섹션 이동">
+          <a href="#my-information">My Information</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="topbar__actions">
+          <button class="theme" type="button" data-theme-toggle aria-label="테마 전환">
+            <span class="theme__icon" aria-hidden="true" data-theme-icon>☀️</span>
+            <span class="theme__text">Theme</span>
+          </button>
+          <button class="hamburger" type="button" data-hamburger aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobile-nav">
+            <span class="hamburger__line" aria-hidden="true"></span>
+            <span class="hamburger__line" aria-hidden="true"></span>
+            <span class="hamburger__line" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+
+      <nav class="mobile-nav" id="mobile-nav" aria-label="모바일 메뉴" hidden>
+        <a href="#my-information" data-mobile-nav-link>My Information</a>
+        <a href="#skills" data-mobile-nav-link>Skills</a>
+        <a href="#projects" data-mobile-nav-link>Projects</a>
+        <a href="#contact" data-mobile-nav-link>Contact</a>
+      </nav>
+    </header>
+
+    <nav class="sidenav" aria-label="빠른 이동">
+      <button class="sidenav__btn" type="button" data-nav-btn data-target="#hero" aria-label="Hero"><span aria-hidden="true">●</span></button>
+      <button class="sidenav__btn" type="button" data-nav-btn data-target="#my-information" aria-label="My Information"><span aria-hidden="true">●</span></button>
+      <button class="sidenav__btn" type="button" data-nav-btn data-target="#skills" aria-label="Skills"><span aria-hidden="true">●</span></button>
+      <button class="sidenav__btn" type="button" data-nav-btn data-target="#projects" aria-label="Projects"><span aria-hidden="true">●</span></button>
+      <button class="sidenav__btn" type="button" data-nav-btn data-target="#contact" aria-label="Contact"><span aria-hidden="true">●</span></button>
+    </nav>
+
+    <main>
+      <!-- ===== HERO ===== -->
+      <section id="hero" class="section hero">
+        <div class="hero__bg" aria-hidden="true">
+          <div class="orb orb--a"></div>
+          <div class="orb orb--b"></div>
+          <div class="orb orb--c"></div>
+          <div class="gridlines"></div>
+        </div>
+
+        <div class="container hero__grid">
+          <div class="hero__copy">
+            <p class="pill">
+              <span class="pill__dot" aria-hidden="true"></span>
+              백앤드 개발자
+            </p>
+            <h1 class="h1">
+              안녕하세요,<br />
+              <span class="accent">juhyuk-kang</span>입니다.
+            </h1>
+            <p class="lead">
+              계속해서 노력하고 성장하는 학생으로,<br />
+              사용자들이 쉽고 간편하게 사용할 수 있는<br />
+              것들을 만듭니다. 바이브 코딩을 주로 합니다.
+            </p>
+
+            <div class="actions">
+              <a class="btn btn--primary" href="#projects">프로젝트 보기</a>
+              <a class="btn" href="#my-information">자기소개</a>
+            </div>
+
+            <div class="social" aria-label="바로가기 링크">
+              <a class="iconlink" href="https://github.com/juhyukkang2013-art" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                <span>GitHub</span>
+              </a>
+              <a class="iconlink" href="https://www.instagram.com/jh_kang13/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                <span>Instagram</span>
+              </a>
+              <a class="iconlink" href="mailto:juhyuk.kang2013@gmail.com" aria-label="이메일">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                <span>Email</span>
+              </a>
+              <a class="iconlink" href="https://www.facebook.com/profile.php?id=61586152895021&locale=ko_KR" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                <span>Facebook</span>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- <div class="hero__visual">
+            <div class="hero__card">
+              <div class="avatar">JK</div>
+              <p class="hero__name">Juhyuk Kang</p>
+              <p class="hero__role">Backend Developer</p>
+              <dl class="facts">
+                <div class="fact">
+                  <dt>위치</dt>
+                  <dd>대한민국 🇰🇷</dd>
+                </div>
+                <div class="fact">
+                  <dt>포커스</dt>
+                  <dd>Backend · Node.js</dd>
+                </div>
+                <div class="fact">
+                  <dt>상태</dt>
+                  <dd><span class="status-dot" aria-hidden="true"></span>열심히 공부 중</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div> -->
+
+        <button class="scrollnext" type="button" data-scroll-next="#about" aria-label="아래로 스크롤">
+          <span class="scrollnext__text">아래로 스크롤</span>
+          <span class="scrollnext__arrow" aria-hidden="true">↓</span>
+        </button>
+      </section>
+
+      <!-- ===== ABOUT ===== -->
+      <section id="my-information" class="section about">
+        <div class="container">
+          <div class="sectionhead" data-animate>
+            <div>
+              <h2 class="h2">My Information</h2>
+              <p class="muted">간단한 소개와 기본 정보, 기술 스택을 정리했어요.</p>
+            </div>
+          </div>
+
+          <div class="about__grid">
+            <article class="card" data-animate style="--delay:.06s">
+              <h3 class="h3">개발자 정보</h3>
+              <p class="muted">
+                계속해서 노력하고 성장하는 학생으로,
+                사용자들이 쉽고 간편하게 사용할 수 있는 것들을 만듭니다.
+                바이브 코딩을 주로 합니다.
+              </p>
+
+              <ul class="infolist" aria-label="연락처 및 링크">
+                <li class="inforow">
+                  <span class="infoico" aria-hidden="true">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                  </span>
+                  <span class="infok">이메일</span>
+                  <a class="infov infolink" href="mailto:juhyuk.kang2013@gmail.com">juhyuk.kang2013@gmail.com</a>
+                </li>
+                <li class="inforow">
+                  <span class="infoico" aria-hidden="true">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                  </span>
+                  <span class="infok">GitHub</span>
+                  <a class="infov infolink" href="https://github.com/juhyukkang2013-art" target="_blank" rel="noopener noreferrer">github.com/juhyukkang2013-art</a>
+                </li>
+                <li class="inforow">
+                  <span class="infoico" aria-hidden="true">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                  </span>
+                  <span class="infok">Instagram</span>
+                  <a class="infov infolink" href="https://www.instagram.com/jh_kang13/" target="_blank" rel="noopener noreferrer">@jh_kang13</a>
+                </li>
+                <li class="inforow">
+                  <span class="infoico" aria-hidden="true">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                  </span>
+                  <span class="infok">Facebook</span>
+                  <a class="infov infolink" href="https://www.facebook.com/profile.php?id=61586152895021&locale=ko_KR" target="_blank" rel="noopener noreferrer">facebook.com</a>
+                </li>
+              </ul>
+            </article>
+
+            <article class="card" data-animate style="--delay:.12s">
+              <h3 class="h3">기술 스택</h3>
+              <div class="stack">
+                <section class="stack__group" aria-label="프론트엔드">
+                  <h4 class="h4">프론트엔드</h4>
+                  <div class="tags">
+                    
+                    
+                    <span class="tag">JavaScript</span>
+                  </div>
+                </section>
+
+                <section class="stack__group" aria-label="백엔드">
+                  <h4 class="h4">백엔드</h4>
+                  <div class="tags">
+                    <span class="tag">C</span>
+                    <span class="tag">Python</span>
+                  </div>
+                </section>
+
+                <section class="stack__group" aria-label="툴즈">
+                  <h4 class="h4">툴즈</h4>
+                  <div class="tags">
+                    <span class="tag">Git &amp; GitHub</span>
+                    <span class="tag">DevTools</span>
+                    <span class="tag">VS Code</span>
+                    <span class="tag">PyCharm</span>
+                    <span class="tag">SourceTree</span>
+                  </div>
+                </section>
+
+                <section class="stack__group" aria-label="바이브 코딩">
+                  <h4 class="h4">바이브 코딩</h4>
+                  <div class="tags">
+                    <span class="tag">ChatGPT Codex</span>
+                    <span class="tag">Gemini</span>
+                    <span class="tag">Kimi</span>
+                    <span class="tag">Claude Code</span>
+                    <span class="tag">DeepSeek</span>
+                    <span class="tag">Cursor</span>
+                    <span class="tag">Vixcode</span>
+                    <span class="tag">Ollama</span>
+                  </div>
+                </section>
+              </div>
+            </article>
+
+            <article class="card" data-animate style="--delay:.18s">
+              <h3 class="h3">자격증</h3>
+              <div class="stack" style="grid-template-columns: 1fr 1fr;">
+                <section class="stack__group" aria-label="문서">
+                  <h4 class="h4" style="display: flex; align-items: center; gap: 8px;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/>
+                    </svg>
+                    문서
+                  </h4>
+                  <ul style="list-style: none; padding: 0;">
+                    <li style="display: flex; align-items: center; gap: 8px; padding: 8px 0; font-weight: 500; color: var(--text);">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                        <rect x="1" y="1" width="14" height="14" rx="2" fill="#da5c35"/>
+                        <text x="8" y="12" text-anchor="middle" fill="white" font-size="11" font-weight="bold">P</text>
+                      </svg>
+                      <span>KAIT 한쇼</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 8px; padding: 8px 0; font-weight: 500; color: var(--text);">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                        <rect x="1" y="1" width="14" height="14" rx="2" fill="#2b579a"/>
+                        <text x="8" y="12" text-anchor="middle" fill="white" font-size="11" font-weight="bold">W</text>
+                      </svg>
+                      <span>KAIT 한글</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 8px; padding: 8px 0; font-weight: 500; color: var(--text);">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                        <rect x="1" y="1" width="14" height="14" rx="2" fill="#1f7d3e"/>
+                        <line x1="1" y1="5" x2="15" y2="5" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+                        <line x1="1" y1="9" x2="15" y2="9" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+                        <line x1="5" y1="1" x2="5" y2="15" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+                        <line x1="11" y1="1" x2="11" y2="15" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+                      </svg>
+                      <span>KAIT 한셀</span>
+                    </li>
+                  </ul>
+                </section>
+
+                <section class="stack__group" aria-label="영상">
+                  <h4 class="h4" style="display: flex; align-items: center; gap: 8px;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+                    </svg>
+                    영상
+                  </h4>
+                  <ul style="list-style: none; padding: 0;">
+                    <li style="display: flex; align-items: center; gap: 8px; padding: 8px 0; font-weight: 500; color: var(--text);">
+                      <span style="opacity: 0.6;">◆</span>
+                      <span>KAIT 곰픽&amp;곰믹스</span>
+                    </li>
+                  </ul>
+                </section>
+
+                <section class="stack__group" aria-label="코딩" style="grid-column: 1 / -1;">
+                  <h4 class="h4" style="display: flex; align-items: center; gap: 8px;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+                    </svg>
+                    코딩
+                  </h4>
+                  <ul style="list-style: none; padding: 0;">
+                    <li style="display: flex; align-items: center; gap: 8px; padding: 8px 0; font-weight: 500; color: var(--text);">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <!-- 파란색 부분 (위) -->
+                        <ellipse cx="5" cy="4.5" rx="2.5" ry="2.8" fill="#3776ab"/>
+                        <circle cx="3.2" cy="3" r="0.4" fill="white"/>
+
+                        <!-- 노란색 부분 (아래) -->
+                        <ellipse cx="9.5" cy="11" rx="2.5" ry="2.8" fill="#ffd43b"/>
+                        <circle cx="11.3" cy="12.5" r="0.4" fill="white"/>
+
+                        <!-- 연결 곡선 -->
+                        <path d="M 6 7 Q 7 8 8 9 Q 8.5 9.5 9 10" stroke="#3776ab" stroke-width="0.5" fill="none" opacity="0.3"/>
+                      </svg>
+                      <span>cospro 2급 python</span>
+                    </li>
+                  </ul>
+                </section>
+              </div>
+            </article>
+
+            <article class="card" data-animate style="--delay:.24s">
+              <h3 class="h3">대회</h3>
+              <div style="padding: 8px 0;">
+                <p style="margin: 0 0 8px 0; font-size: 0.9rem; font-weight: 500; color: var(--text); line-height: 1.6;">
+                  <span style="opacity: 0.7; font-size: 0.85rem;">◆</span> 2024 제3회 국가유산 디지털 콘텐츠 경진대회
+                </p>
+                <p style="margin: 0 0 16px 16px; font-size: 0.85rem; color: var(--muted); line-height: 1.6;">
+                  - 결과: 서류 합격, 면접 탈락
+                </p>
+
+                <p style="margin: 0 0 8px 0; font-size: 0.9rem; font-weight: 500; color: var(--text); line-height: 1.6;">
+                  <span style="opacity: 0.7; font-size: 0.85rem;">◆</span> 한국정보올림피아드
+                </p>
+                <p style="margin: 0 0 0 16px; font-size: 0.85rem; color: var(--muted); line-height: 1.6;">
+                  - 상태: 준비중
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SKILLS ===== -->
+      <section id="skills" class="section skills">
+        <div class="container">
+          <div class="sectionhead" data-animate>
+            <div>
+              <h2 class="h2">Skills</h2>
+              <p class="muted">현재 사용하는 기술과 도구들이에요.</p>
+            </div>
+          </div>
+
+          <div class="skills__grid">
+            <article class="skills__card" data-animate style="--delay:.05s">
+              <div class="skills__icon" aria-hidden="true">🌐</div>
+              <h3 class="h3">프론트엔드</h3>
+              <div class="tags">
+                
+                <span class="tag tag--filled">JavaScript</span>
+                
+              </div>
+            </article>
+
+            <article class="skills__card" data-animate style="--delay:.10s">
+              <div class="skills__icon" aria-hidden="true">⚙️</div>
+              <h3 class="h3">백엔드</h3>
+              <div class="tags">
+                
+                <span class="tag tag--filled">Python</span>
+                <span class="tag tag--filled">C</span>
+                
+              </div>
+            </article>
+
+            <article class="skills__card" data-animate style="--delay:.15s">
+              <div class="skills__icon" aria-hidden="true">🛠️</div>
+              <h3 class="h3">개발 도구</h3>
+              <div class="tags">
+                <span class="tag tag--filled">Git</span>
+                <span class="tag tag--filled">GitHub</span>
+                <span class="tag tag--filled">VS Code</span>
+                <span class="tag tag--filled">PyCharm</span>
+                <span class="tag tag--filled">DevTools</span>
+              </div>
+            </article>
+
+            <article class="skills__card" data-animate style="--delay:.20s">
+              <div class="skills__icon" aria-hidden="true">🤖</div>
+              <h3 class="h3">바이브 코딩</h3>
+              <div class="tags">
+                <span class="tag tag--filled">ChatGPT Codex</span>
+                <span class="tag tag--filled">Gemini</span>
+                <span class="tag tag--filled">Kimi</span>
+                <span class="tag tag--filled">Claude Code</span>
+                <span class="tag tag--filled">DeepSeek</span>
+                <span class="tag tag--filled">Cursor</span>
+                <span class="tag tag--filled">Vixcode</span>
+                <span class="tag tag--filled">Ollama</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== PROJECTS ===== -->
+      <section id="projects" class="section projects">
+        <div class="projects__bg" aria-hidden="true"></div>
+
+        <div class="container">
+          <div class="sectionhead sectionhead--invert" data-animate>
+            <div>
+              <h2 class="h2">Projects</h2>
+              <p class="muted muted--invert">지금까지 만든 프로젝트들이에요.</p>
+            </div>
+          </div>
+
+          <div class="projects__list">
+            <article class="card project" data-animate style="--delay:.06s">
+              <button class="project__media" type="button" aria-label="우리반 웹사이트 자세히 보기" data-project="our-class-website">
+                <img src="./img/our-class-website.png" alt="우리반 웹사이트 스크린샷" loading="lazy" class="project__img" />
+                <div class="project__overlay" aria-hidden="true">
+                  <span class="project__overlay-text">자세히 보기 →</span>
+                </div>
+              </button>
+              <div class="project__body">
+                <span class="project__badge">Web App</span>
+                <h3 class="h3">우리반 웹사이트</h3>
+                <p class="muted muted--invert">우리 반, 우리 학교의 모든 정보가 한곳에! 급식, 시간표, 학사일정을 한눈에 확인할 수 있어요.</p>
+                <div class="tags tags--invert" aria-label="기술 태그">
+                  <span class="tag tag--invert">HTML</span>
+                  <span class="tag tag--invert">CSS</span>
+                  <span class="tag tag--invert">JavaScript</span>
+                </div>
+                <div class="project__links" aria-label="프로젝트 링크">
+                  <a class="plink plink--primary" href="https://eungaram-1-2.github.io/eungaram-1-2-integration/#home" target="_blank" rel="noopener noreferrer">사이트 방문</a>
+                  <a class="plink" href="https://github.com/eungaram-1-2/eungaram-1-2-integration" target="_blank" rel="noopener noreferrer">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== CONTACT ===== -->
+      <section id="contact" class="section contact">
+        <div class="container">
+          <div class="contact__inner" data-animate>
+            <p class="contact__eyebrow">연락하기</p>
+            <h2 class="h2 contact__title">함께 만들어볼까요?</h2>
+            <p class="contact__desc muted">새로운 프로젝트, 협업, 또는 단순한 안부 인사도 환영합니다.<br />언제든지 편하게 연락주세요!</p>
+            <a class="btn btn--primary contact__cta" href="mailto:juhyuk.kang2013@gmail.com">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              이메일 보내기
+            </a>
+
+            <div class="contact__socials">
+              <a class="contact__social" href="https://github.com/juhyukkang2013-art" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+              <a class="contact__social" href="https://www.instagram.com/jh_kang13/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+              <a class="contact__social" href="https://www.facebook.com/profile.php?id=61586152895021&locale=ko_KR" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <a class="footer__brand" href="#hero">juhyuk-kang</a>
+        <p class="muted footer__copy">© <span data-year></span> juhyuk-kang. All rights reserved.</p>
+        <a class="muted footer__top" href="#hero">맨 위로 ↑</a>
+      </div>
+    </footer>
+
+    <!-- ===== PROJECT DETAIL MODAL ===== -->
+    <div class="pmodal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="pmodalTitle" hidden>
+      <div class="pmodal__topbar">
+        <button class="pmodal__back" type="button" id="pmodalClose">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+          홈으로 돌아가기
+        </button>
+      </div>
+
+      <div class="pmodal__content">
+        <div class="pmodal__main">
+          <div class="pmodal__badges">
+            <span class="pmodal__badge pmodal__badge--type" data-pmodal-type></span>
+            <span class="pmodal__badge pmodal__badge--feat">⭐ Featured Project</span>
+          </div>
+          <h2 class="pmodal__title" id="pmodalTitle" data-pmodal-title></h2>
+          <p class="pmodal__desc" data-pmodal-desc></p>
+          <div class="pmodal__actions">
+            <a class="pmodal__btn pmodal__btn--primary" data-pmodal-site target="_blank" rel="noopener noreferrer">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              사이트 방문
+            </a>
+            <a class="pmodal__btn" data-pmodal-github target="_blank" rel="noopener noreferrer">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+          </div>
+
+          <div class="pmodal__hero">
+            <img data-pmodal-hero-img alt="" />
+          </div>
+
+          <h3 class="pmodal__section-label">주요 기능</h3>
+          <div class="pmodal__features" data-pmodal-features></div>
+        </div>
+
+        <aside class="pmodal__sidebar">
+          <div class="pmodal__sidebar-card">
+            <h4 class="pmodal__sidebar-title">기술 스택</h4>
+            <div class="tags" data-pmodal-tags></div>
+          </div>
+          <div class="pmodal__sidebar-card">
+            <h4 class="pmodal__sidebar-title">프로젝트 정보</h4>
+            <dl class="pmodal__info">
+              <div class="pmodal__info-row">
+                <dt>📅 개발 기간</dt>
+                <dd data-pmodal-period></dd>
+              </div>
+              <div class="pmodal__info-row">
+                <dt>👤 유형</dt>
+                <dd data-pmodal-projtype></dd>
+              </div>
+            </dl>
+          </div>
+          <div class="pmodal__sidebar-card">
+            <h4 class="pmodal__sidebar-title">프로젝트 상세</h4>
+            <p class="pmodal__detail-text" data-pmodal-detail></p>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <script src="./js/main.js" defer></script>
+  </body>
+</html>
