@@ -144,7 +144,7 @@ const PROJECTS = {
   'our-class-website': {
     type: 'WEB',
     title: '우리반 웹사이트',
-    desc: '우리 반, 우리 학교의 모든 정보가 한곳에! 급식, 시간표, 학사일정을 한눈에 확인할 수 있어요. NEIS API를 사용해 프론트엔드로 불러오는 방식, 다양한 기능을 지원합니다.',
+    desc: '우리 반, 우리 학교의 모든 정보가 한곳에! 급식, 시간표, 학사일정을 한눈에 확인할 수 있어요. NEIS API를 사용하여 급식, 시간표, 학사일정 기능을 추가하고, 그리고 AI 기능은 groq api를 사용함. (AI기능은 현재 임시 정지함)',
     siteUrl: 'https://eungaram-1-2.github.io/eungaram-1-2-integration/#home',
     githubUrl: 'https://github.com/eungaram-1-2/eungaram-1-2-integration',
     mainImage: './img/our-class-website.png',
