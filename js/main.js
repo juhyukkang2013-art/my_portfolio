@@ -141,24 +141,41 @@ function initScrollAnimations() {
 }
 
 const PROJECTS = {
-  'our-class-website': {
-    type: 'WEB',
-    title: '우리반 웹사이트',
-    desc: '우리 반, 우리 학교의 모든 정보가 한곳에! 급식, 시간표, 학사일정을 한눈에 확인할 수 있어요. NEIS API를 사용하여 급식, 시간표, 학사일정 기능을 추가하고, 그리고 AI 기능은 groq api를 사용함. (AI기능은 현재 임시 정지함)',
-    siteUrl: 'https://eungaram-1-2.github.io/eungaram-1-2-integration/#home',
-    githubUrl: 'https://github.com/eungaram-1-2/eungaram-1-2-integration',
-    mainImage: './img/our-class-website.png',
-    tags: ['HTML', 'CSS', 'JavaScript', 'Node.js'],
-    period: '2026년~2026년',
+  // 'our-class-website': {
+  //   type: 'WEB',
+  //   title: '우리반 웹사이트',
+  //   desc: '우리 반, 우리 학교의 모든 정보가 한곳에! 급식, 시간표, 학사일정을 한눈에 확인할 수 있어요. NEIS API를 사용하여 급식, 시간표, 학사일정 기능을 추가하고, 그리고 AI 기능은 groq api를 사용함. (AI기능은 현재 임시 정지함)',
+  //   siteUrl: 'https://eungaram-1-2.github.io/eungaram-1-2-integration/#home',
+  //   githubUrl: 'https://github.com/eungaram-1-2/eungaram-1-2-integration',
+  //   mainImage: './img/our-class-website.png',
+  //   tags: ['HTML', 'CSS', 'JavaScript', 'Node.js'],
+  //   period: '2026년~2026년',
+  //   projectType: '개인 프로젝트',
+  //   detail: '급식·시간표·학사일정을 실시간으로 제공',
+  //   features: [
+  //     '급식 메뉴 실시간 조회',
+  //     '시간표 확인 기능',
+  //     '학사일정 달력',
+  //     '다크 모드 지원',
+  //     '모바일 맞춤형 디자인',
+  //     'PWA 설치 지원',
+  //   ],
+  // },
+  'youtube-downloader': {
+    type: 'TOOL',
+    title: 'YouTube Downloader',
+    desc: 'YouTube 동영상을 간편하게 다운로드할 수 있는 도구입니다. 여기에 동영상 링크를 붙여넣고 다운로드하면 됩니다.',
+    siteUrl: '#',
+    githubUrl: 'https://github.com/juhyukkang2013-art/youtube_downloader',
+    mainImage: './img/youtube-downloader.png',
+    tags: ['Python', 'youtube-dl'],
+    period: '2026년',
     projectType: '개인 프로젝트',
-    detail: '급식·시간표·학사일정을 실시간으로 제공',
+    detail: 'YouTube 동영상 다운로드 유틸리티',
     features: [
-      '급식 메뉴 실시간 조회',
-      '시간표 확인 기능',
-      '학사일정 달력',
-      '다크 모드 지원',
-      '모바일 맞춤형 디자인',
-      'PWA 설치 지원',
+      '동영상 링크 붙여넣기로 다운로드',
+      '다양한 화질 선택 지원',
+      '빠르고 간편한 UI',
     ],
   },
 };
@@ -174,7 +191,9 @@ function initProjectModal() {
     modal.querySelector('[data-pmodal-type]').textContent = p.type;
     modal.querySelector('[data-pmodal-title]').textContent = p.title;
     modal.querySelector('[data-pmodal-desc]').textContent = p.desc;
-    modal.querySelector('[data-pmodal-site]').href = p.siteUrl;
+    const siteBtn = modal.querySelector('[data-pmodal-site]');
+    siteBtn.href = p.siteUrl;
+    siteBtn.style.display = p.siteUrl === '#' ? 'none' : '';
     modal.querySelector('[data-pmodal-github]').href = p.githubUrl;
 
     const heroImg = modal.querySelector('[data-pmodal-hero-img]');
