@@ -141,6 +141,26 @@ function initScrollAnimations() {
 }
 
 const PROJECTS = {
+  'neis-school-tt-lunch': {
+    type: 'WEB',
+    title: '학교 급식/시간표 찾기',
+    desc: 'NEIS API를 활용하여 학교 급식과 시간표를 쉽게 찾을 수 있는 웹 애플리케이션입니다.',
+    siteUrl: 'https://juhyukkang2013-art.github.io/NEIS-school-tt-lunch/',
+    githubUrl: 'https://github.com/juhyukkang2013-art/NEIS-school-tt-lunch',
+    mainImage: './img/neis-school-tt-lunch.png',
+    tags: ['JavaScript', 'NEIS API', 'GitHub Pages'],
+    period: '2026년',
+    projectType: '개인 프로젝트',
+    detail: 'NEIS Open API를 브라우저에서 직접 활용하는 정적 웹 애플리케이션',
+    features: [
+      '학교 검색 및 선택 기능',
+      '급식 정보 실시간 조회',
+      '시간표 자동 파싱 및 표시',
+      '데이터 캐싱으로 빠른 로딩',
+      '날짜별 조회 기능',
+      '모바일 반응형 디자인',
+    ],
+  },
   // 'our-class-website': {
   //   type: 'WEB',
   //   title: '우리반 웹사이트',
