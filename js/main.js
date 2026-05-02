@@ -141,6 +141,26 @@ function initScrollAnimations() {
 }
 
 const PROJECTS = {
+  'online-notepad': {
+    type: 'WEB APP',
+    title: 'Online Notepad',
+    desc: '리치 텍스트 에디터 기반의 온라인 메모장입니다. 마크다운 단축키로 빠르게 서식을 적용하고, 자동 저장과 다크모드를 지원합니다.',
+    siteUrl: 'https://juhyukkang2013-art.github.io/notepads/',
+    githubUrl: 'https://github.com/juhyukkang2013-art/notepads',
+    mainImage: './img/notepad.png',
+    tags: ['JavaScript', 'localStorage', 'GitHub Pages'],
+    period: '2026년',
+    projectType: '개인 프로젝트',
+    detail: 'contenteditable 기반 리치 텍스트 에디터, 마크다운 단축키 지원, localStorage 자동 저장',
+    features: [
+      '리치 텍스트 에디터 (굵게, 이탤릭 등)',
+      '마크다운 단축키 실시간 변환',
+      '여러 메모 관리 및 검색',
+      '자동 저장 (localStorage)',
+      '다크 / 라이트 모드',
+      '모바일 반응형 디자인',
+    ],
+  },
   'neis-school-tt-lunch': {
     type: 'WEB',
     title: '학교 급식/시간표 찾기',
